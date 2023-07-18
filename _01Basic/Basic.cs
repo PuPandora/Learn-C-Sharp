@@ -1,4 +1,6 @@
-﻿using System;
+﻿// using도 사실은 namespace이다.
+// 누군가 쳐놓은 코드이다.
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
