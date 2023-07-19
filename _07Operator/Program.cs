@@ -52,7 +52,24 @@ namespace _07Operator
             int BPostIncrement = 0;
             Console.WriteLine("전처리 문장입니다. \t\tA++ = " + APreIncrement++);
             Console.WriteLine("전처리 문장입니다. \t\t++B = " + ++BPostIncrement);
-            Console.WriteLine("전처리 문장 연산없이 출력 \tA = " + APreIncrement);
+            Console.WriteLine("전처리 변수 연산없이 출력 \tA = " + APreIncrement);
+
+            Console.WriteLine();
+
+            // 비교 연산자
+            int comparisonA = 10;
+            int comparisonB = 20;
+
+            Console.WriteLine("A : " + comparisonA + "\nB : " + comparisonB);
+            Console.WriteLine();
+            Console.WriteLine("A > B = " + (comparisonA > comparisonB));
+            Console.WriteLine("A < B = " + (comparisonA < comparisonB));
+            Console.WriteLine("A == B = " + (comparisonA == comparisonB));
+            Console.WriteLine("A >= B = " + (comparisonA >= comparisonB));
+            Console.WriteLine("A <= B = " + (comparisonA <= comparisonB));
+            Console.WriteLine("A != B = " + (comparisonA != comparisonB));
+
+            Console.WriteLine();
 
         }
     }
