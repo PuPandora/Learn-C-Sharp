@@ -10,8 +10,11 @@ namespace _07Operator
     {
         static void Main(string[] args)
         {
-            // 수의 연산
+            // 수의 연산 (Number Operation)
             // + , - , * , / , %
+            Console.WriteLine("수의 연산 | Number Operation");
+            Console.WriteLine("// + , - , * , / , %");
+
             Console.WriteLine($"5 + 5는 {5 + 5}입니다.");
             Console.WriteLine($"5 - 5는 {5 - 5}입니다.");
             Console.WriteLine($"5 x 5는 {5 * 5}입니다.");
@@ -37,7 +40,8 @@ namespace _07Operator
 
             Console.WriteLine();
 
-            // 증가, 감소 연산자
+            // 증가, 감소 연산자 (Increment, Decrement Operator)
+            Console.WriteLine("증가, 감소 연산자 | Increment/Decrement Operator");
             int d = 1;
             Console.WriteLine("시작은 " + d + "입니다.");
             a++;
@@ -47,16 +51,21 @@ namespace _07Operator
 
             Console.WriteLine();
 
-            // 전처리 후처리 (전치 후치) Pre-increment, Post-increment
-            int APreIncrement = 0;
-            int BPostIncrement = 0;
-            Console.WriteLine("전처리 문장입니다. \t\tA++ = " + APreIncrement++);
-            Console.WriteLine("전처리 문장입니다. \t\t++B = " + ++BPostIncrement);
-            Console.WriteLine("전처리 변수 연산없이 출력 \tA = " + APreIncrement);
+            // 전처리 후처리 (전치 후치) Pre-, Post-
+            Console.WriteLine("전처리 후처리 | Pre- Post-");
+
+            int PreIncrementA = 0;
+            int PostIncrementB = 0;
+
+            Console.WriteLine($"A = {PreIncrementA}, B = {PostIncrementB}");
+            Console.WriteLine("A++ = " + PreIncrementA++);
+            Console.WriteLine("++B = " + ++PostIncrementB);
+            Console.WriteLine("A = " + PreIncrementA);
 
             Console.WriteLine();
 
-            // 비교 연산자
+            // 비교 연산자 | Comparison Operator
+            Console.WriteLine("비교 연산자 | Comparison Operator");
             int comparisonA = 10;
             int comparisonB = 20;
 
@@ -81,13 +90,13 @@ namespace _07Operator
             compareBoolB = compareIntA > compareIntB;
             compareBoolC = compareIntA == compareIntB;
 
-            Console.WriteLine();
-
             // 조건 연산자 (삼항 연산자 Conditional Operator)
+            Console.WriteLine("삼항 연산자 | Conditional Operator");
+
             bool conditionalBoolA;
             int conditionalIntA;
-
             conditionalBoolA = true;
+
             // 조건식 ?(연산자) 값(true) : 값(false);
             conditionalIntA = conditionalBoolA ? 1 : 0;
             Console.WriteLine("Int A = Bool A ? 1 : 0;");
@@ -103,6 +112,54 @@ namespace _07Operator
 
             conditionalBoolB = true;
             string conditionalAnswer = conditionalBoolB ? right : wrong;
+
+            // 논리 연산자 (Logical Operator)
+            Console.WriteLine("논리 연산자 | Logical Operator");
+
+            bool logicalBoolA, logicalBoolB;
+            int logicalIntA = 3, logicalIntB = 4;
+            Console.WriteLine($"A = {logicalIntA} / b = {logicalIntB}");
+
+            logicalBoolA = (logicalIntA < 0);
+            logicalBoolB = (logicalIntB > 0);
+            Console.Write("A == 3 && B == 3 : ");
+            Console.WriteLine((logicalIntA == 3) && (logicalIntB == 3));
+            Console.Write("A == 3 || B == 3 : ");
+            Console.WriteLine((logicalIntA == 3) || (logicalIntB == 3));
+
+            Console.WriteLine();
+
+            logicalBoolA = true; logicalBoolB = false;
+            Console.WriteLine($"BoolA = {logicalBoolA} / BoolB = {logicalBoolB}");
+            Console.Write("BoolA && BoolB : ");
+            Console.WriteLine(logicalBoolA && logicalBoolB);
+            Console.Write("BoolA || BoolB : ");
+            Console.WriteLine(logicalBoolA || logicalBoolB);
+
+            Console.WriteLine();
+
+            //단락 평가 연산자
+            // &&와 ||는 연산 효율을 위해 필요할 때 생략하지만, 단락 평가 연산자는 그러지 않고 모두 확인
+            // Comment : 왜 필요할까?
+
+            Console.WriteLine("단락 평가자 | &, |");
+            Console.Write("logicalBoolA & logicalBoolB = ");
+            Console.WriteLine(logicalBoolA & logicalBoolB);
+            Console.Write("logicalBoolA && logicalBoolB = ");
+            Console.WriteLine(logicalBoolA && logicalBoolB);
+            Console.Write("logicalBoolB & logicalBoolA = ");
+            Console.WriteLine(logicalBoolB & logicalBoolA);
+            Console.Write("logicalBoolB && logicalBoolA = ");
+            Console.WriteLine(logicalBoolB && logicalBoolA);
+            Console.Write("logicalBoolA | logicalBoolB = ");
+            Console.WriteLine(logicalBoolA | logicalBoolB);
+            Console.Write("logicalBoolA || logicalBoolB = ");
+            Console.WriteLine(logicalBoolA || logicalBoolB);
+            Console.Write("logicalBoolB | logicalBoolA = ");
+            Console.WriteLine(logicalBoolB | logicalBoolA);
+            Console.Write("logicalBoolB || logicalBoolA = ");
+            Console.WriteLine(logicalBoolB || logicalBoolA);
+
 
 
             // 형 변환
