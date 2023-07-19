@@ -71,6 +71,41 @@ namespace _07Operator
 
             Console.WriteLine();
 
+            // 논리형 (bool)
+            int compareIntA = 0;
+            int compareIntB = 0;
+
+            bool compareBoolA, compareBoolB, compareBoolC;
+
+            compareBoolA = compareIntA < compareIntB;
+            compareBoolB = compareIntA > compareIntB;
+            compareBoolC = compareIntA == compareIntB;
+
+            Console.WriteLine();
+
+            // 조건 연산자 (삼항 연산자 Conditional Operator)
+            bool conditionalBoolA;
+            int conditionalIntA;
+
+            conditionalBoolA = true;
+            // 조건식 ?(연산자) 값(true) : 값(false);
+            conditionalIntA = conditionalBoolA ? 1 : 0;
+            Console.WriteLine("Int A = Bool A ? 1 : 0;");
+            Console.WriteLine("Bool A의 값이 true일 경우 = " + conditionalIntA);
+            conditionalBoolA = false;
+            conditionalIntA = conditionalBoolA ? 1 : 0;
+            Console.WriteLine("Bool A의 값이 false일 경우 = " + conditionalIntA);
+
+            Console.WriteLine();
+
+            bool conditionalBoolB;
+            string right = "정답", wrong = "오답";
+
+            conditionalBoolB = true;
+            string conditionalAnswer = conditionalBoolB ? right : wrong;
+
+
+            // 형 변환
         }
     }
 }
