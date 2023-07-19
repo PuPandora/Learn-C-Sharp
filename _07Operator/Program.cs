@@ -45,6 +45,15 @@ namespace _07Operator
             a--;
             Console.WriteLine("1 감소시켜 " + a + "가 되었습니다.");
 
+            Console.WriteLine();
+
+            // 전처리 후처리 (전치 후치) Pre-increment, Post-increment
+            int APreIncrement = 0;
+            int BPostIncrement = 0;
+            Console.WriteLine("전처리 문장입니다. \t\tA++ = " + APreIncrement++);
+            Console.WriteLine("전처리 문장입니다. \t\t++B = " + ++BPostIncrement);
+            Console.WriteLine("전처리 문장 연산없이 출력 \tA = " + APreIncrement);
+
         }
     }
 }
