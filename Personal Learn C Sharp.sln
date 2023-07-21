@@ -23,7 +23,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Book", "Book", "{F67EA632-C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Youtube", "Youtube", "{9A16D250-D205-4080-9D6C-76F978941C1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.1ClassAccess", "01ClassAccess\01.1ClassAccess.csproj", "{06F1C19F-61D7-4518-AA3A-4195D8BB5B3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01ClassAccess", "01ClassAccess\01ClassAccess.csproj", "{06F1C19F-61D7-4518-AA3A-4195D8BB5B3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lab", "Lab", "{F61EC47F-034E-4D04-8BC6-BED9DEB8AF03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

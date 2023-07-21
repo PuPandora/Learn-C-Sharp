@@ -17,7 +17,7 @@ class Player
         Console.WriteLine($"플레이어는 싸운다! 체력은 {HP}, 대미지는 {Damage}, 방어력은 {Defense}이다!");
     }
 
-    void Drink()
+    void Drink() // Private 함수
     {
         Console.WriteLine("플레이어는 마신다!");
     }
@@ -32,20 +32,21 @@ class Stock
     int OwnedCount = 0;
 
 
-
-    public Stock(int SetId, string SetName, int SetPrice, int SetOwnedCount) // 함수 생성 시 함수
+    public Stock(int ID, string Name, int Price, int OwnedCount) // 함수 생성 시 값 설정 (메소드?)
     {
-        ID = SetId;
-        Name = SetName;
-        Price = SetPrice;
-        OwnedCount = SetOwnedCount;
+        this.ID = ID;
+        this.Name = Name;
+        this.Price = Price;
+        this.OwnedCount = OwnedCount;
     }
 
+    // 정보 출력
     public void DisplayStockInformation()
     {
         Console.WriteLine("ID : {0}, Name : {1}, Price : {2:#,0}, OwnedCount : {3}", ID, Name, Price, OwnedCount);
     }
 
+    // 주가 변동
     public void RandomRandom()
     {
         Random rand = new Random();
@@ -56,6 +57,11 @@ class Stock
             double a = rand.NextDouble();
             Console.WriteLine(a);
         }
+    }
+
+    public void PlusOwned(int value)
+    {
+        this.OwnedCount += value;
     }
 
 }
@@ -84,6 +90,7 @@ namespace _01ClassAccess
             Stock AMD = new Stock(0, "AMD", 60000, 0);
             AMD.DisplayStockInformation(); // AMD 객체의 메소드 호출
 
+            // 다른 객체도 생성
             Stock Intel = new Stock(1, "Intel", 30000, 0);
             Stock NVIDIA = new Stock(2, "Nvidia", 150000, 0);
             Console.WriteLine();
@@ -94,6 +101,13 @@ namespace _01ClassAccess
 
             // for문을 통한 출력 (함수 호출)
             Stock[] stocks = new Stock[] {AMD, Intel, NVIDIA}; // 객체들 배열화
+            for (int i = 0; i < stocks.Length; i++)
+            {
+                stocks[i].DisplayStockInformation();
+            }
+
+            AMD.PlusOwned(5);
+
             for (int i = 0; i < stocks.Length; i++)
             {
                 stocks[i].DisplayStockInformation();
