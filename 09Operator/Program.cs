@@ -10,6 +10,7 @@ namespace _09Operator
     {
         static void Main(string[] args)
         {
+
         }
     }
 }

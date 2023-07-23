@@ -7,7 +7,7 @@
     <ProjectGuid>{AEEC1774-6637-4B2B-A495-C77DAA1A95FF}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_09Operator</RootNamespace>
-    <AssemblyName>_09Operator</AssemblyName>
+    <AssemblyName>09Operator</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
