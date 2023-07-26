@@ -7,7 +7,7 @@
     <ProjectGuid>{2C289356-1C36-4291-99B1-7894060A4AD9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_12Memory_Reference_</RootNamespace>
-    <AssemblyName>_12Memory_Reference_</AssemblyName>
+    <AssemblyName>12Memory%28Reference%29</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
