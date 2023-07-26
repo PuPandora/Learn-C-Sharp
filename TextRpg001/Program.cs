@@ -26,6 +26,15 @@ class Player
         Console.WriteLine(MAXHP);
         Console.WriteLine("------------------------------------");
     }
+
+    public void Heal(int value)
+    {
+        HP += value;
+        if (HP > MAXHP)
+        {
+            HP = MAXHP;
+        }
+    }
 }
 
 namespace TextRpg001
@@ -58,7 +67,9 @@ namespace TextRpg001
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.D1:
-                        
+                        // Player 클래스의 체력을 어떻게든 채우는 코드
+                        _Player.Heal(100);
+                        break;
                     case ConsoleKey.D2:
 
                     case ConsoleKey.D3:
