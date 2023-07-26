@@ -7,7 +7,7 @@
     <ProjectGuid>{A845BAF2-ED7C-4685-9079-DEAFE63D3A86}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_15StaticClass</RootNamespace>
-    <AssemblyName>_15StaticClass</AssemblyName>
+    <AssemblyName>15StaticClass</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
