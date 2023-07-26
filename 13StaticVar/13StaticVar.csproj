@@ -7,7 +7,7 @@
     <ProjectGuid>{2AF07CE9-68B2-42D2-977B-7C3A78F11EB4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_13StaticVar</RootNamespace>
-    <AssemblyName>_13StaticVar</AssemblyName>
+    <AssemblyName>13StaticVar</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
