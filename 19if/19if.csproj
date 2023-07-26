@@ -7,7 +7,7 @@
     <ProjectGuid>{52D1FEE6-C3E7-4708-AA18-081BAAA1D851}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_19if</RootNamespace>
-    <AssemblyName>_19if</AssemblyName>
+    <AssemblyName>19if</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
