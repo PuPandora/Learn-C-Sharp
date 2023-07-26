@@ -7,7 +7,7 @@
     <ProjectGuid>{4E36E54D-63F9-4521-B2D1-C44A8233ADF7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_14StaticFunc</RootNamespace>
-    <AssemblyName>_14StaticFunc</AssemblyName>
+    <AssemblyName>14StaticFunc</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
