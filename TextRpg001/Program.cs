@@ -35,6 +35,32 @@ class Player
             HP = MAXHP;
         }
     }
+
+    public void MaxHeal()
+    {
+        // 함수는 비대하지 않을 수록 좋다.
+        // 10~5줄 짜리 함수를 만들고
+        if (HP >= MAXHP)
+        {
+            Console.WriteLine("");
+            Console.WriteLine("체력이 모두 회복되어있어서 회복할 필요가 없습니다.");
+            Console.ReadKey();
+        }else
+        {
+            HP = MAXHP;
+            PrintHP();
+        }
+        return;
+    }
+
+    public void PrintHP()
+    {
+        // 그 객체의 맴버변수와 관련된 코드를 2번 이상 치면
+        // 함수로 만들어라.
+        Console.Write("현재 플레이어의 HP는 ");
+        Console.Write(HP);
+        Console.WriteLine("입니다.");
+    }
 }
 
 namespace TextRpg001
@@ -61,6 +87,12 @@ namespace TextRpg001
                 Console.WriteLine("2. 무기를 강화한다.");
                 Console.WriteLine("3. 마을을 나간다.");
 
+                // 초반에 프로그래밍의 전부
+                // 객체를 선언해야 할 때
+                // 함수의 분기
+                // 함수의 통홥
+                // 함수를 합칠 때와 쪼갤 때가 있다.
+
                 // ConsoleKey CK = Console.ReadKey().key;
                 // 리턴되는 함수를 직접 인자값으로 줄 수도 있다.
                 // 개인 Style
@@ -68,7 +100,10 @@ namespace TextRpg001
                 {
                     case ConsoleKey.D1:
                         // Player 클래스의 체력을 어떻게든 채우는 코드
-                        _Player.Heal(100);
+                        //_Player.Heal(100);
+                        _Player.MaxHeal();
+                        //_Player.PrintHP();
+                        Console.ReadKey();
                         break;
                     case ConsoleKey.D2:
 
