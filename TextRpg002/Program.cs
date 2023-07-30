@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 // [C# 강의 20화]상속 기초
 // https://youtu.be/exqTQxQqkUk?list=PL4SIC1d_ab-Y-bBKojxhtFWwNpawMM1h5
+// [C# 강의 21화]생성자 & Text RPG 숙제
+// https://youtu.be/bh_-kWCvK4w?list=PL4SIC1d_ab-Y-bBKojxhtFWwNpawMM1h5
 
 // 코드 재활용성이 떨어진다는 표현을 사용하게 된다.
 // 이 코드 재활용성을 향상시키기 위한 문법이
@@ -19,6 +21,11 @@ class FightUnit
     protected int AT = 10;
     protected int HP = 50;
     protected int MAXHP = 50;
+
+    public void SetName(string _Name)
+    {
+        Name = _Name;
+    }
 
     public void StatusRender()
     {
@@ -37,11 +44,6 @@ class FightUnit
 
 class Player : FightUnit
 {
-    string Name = "플레이어";
-    int AT = 10;
-    int HP = 50;
-    int MAXHP = 100;
-
     public void Heal(int value)
     {
         HP += value;
@@ -77,11 +79,20 @@ class Player : FightUnit
         Console.Write(HP);
         Console.WriteLine("입니다.");
     }
+
+    public Player()
+    {
+        Name = "플레이어";
+    }
 }
 
 class Monster : FightUnit
 {
-
+    // 인자값을 만들어 줄 수도 있다.
+    public Monster(string _Name)
+    {
+        Name = _Name;
+    }
 }
 
 namespace TextRpg002
@@ -187,12 +198,29 @@ namespace TextRpg002
             // 객체로 만들어 나가는 것.
 
             Player NewPlayer = new Player();
-            Monster NewMonster = new Monster();
+            Monster NewMonster = new Monster("오크");
 
-            while(true)
+            // ** 둘 중 누군가 죽을 때 까지 싸우는 기능 구현 숙제
+            while(/*둘 중 누군가 죽을 때 까지*/true)
             {
                 NewPlayer.StatusRender();
                 NewMonster.StatusRender();
+                // 1. 죽을 때 까지 싸우게 만들어라
+                // 1-1. 권장, 플레이어 한대, 몬스터 한대
+                // 2. 한 쪽이 죽으면(나간다) 마을로 자동 이송
+                // 2-1. 그냥 나간다.
+                // 2-2. 마을로 나간다.
+
+                // 한 번에 모든 걸 끝낼려고 하는 것 보다
+                // 쪼개서, 분리해서 구현
+
+                // 상속은 객체지향에서 매우 필수적인 개념이다.
+                // 꼭 외워라. 계속 응용해보아라.
+
+                // 가장 기본적인 것이 되면 그 다음부터 하라.
+                // 가장 단순한 부분부터 만들어가라.
+                // 수단과 방법을 가리지 않고 (구현)
+                // 싸우게 만들어보기.
                 Console.ReadKey();
             }
 
