@@ -7,7 +7,7 @@
     <ProjectGuid>{368AED2C-7331-4768-BF8E-0691647663C5}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_24ClassConstructor</RootNamespace>
-    <AssemblyName>_24ClassConstructor</AssemblyName>
+    <AssemblyName>24ClassConstructor</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

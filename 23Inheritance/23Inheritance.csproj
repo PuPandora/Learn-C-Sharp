@@ -7,7 +7,7 @@
     <ProjectGuid>{F6840E63-05E4-4DFA-86F6-689ABBC56EA4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_23Inheritance</RootNamespace>
-    <AssemblyName>_23Inheritance</AssemblyName>
+    <AssemblyName>23Inheritance</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
