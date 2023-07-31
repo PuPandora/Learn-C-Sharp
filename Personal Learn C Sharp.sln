@@ -71,6 +71,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23Inheritance", "23Inherita
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "24ClassConstructor", "24ClassConstructor\24ClassConstructor.csproj", "{368AED2C-7331-4768-BF8E-0691647663C5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Practice", "Practice", "{E773335A-6B88-4781-B661-72916733CE02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01Inheritance", "01Inheritance\01Inheritance.csproj", "{E1A662F1-509B-4869-892F-CFF0ED9D4E86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -189,6 +193,10 @@ Global
 		{368AED2C-7331-4768-BF8E-0691647663C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{368AED2C-7331-4768-BF8E-0691647663C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{368AED2C-7331-4768-BF8E-0691647663C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1A662F1-509B-4869-892F-CFF0ED9D4E86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1A662F1-509B-4869-892F-CFF0ED9D4E86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1A662F1-509B-4869-892F-CFF0ED9D4E86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1A662F1-509B-4869-892F-CFF0ED9D4E86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -225,6 +233,7 @@ Global
 		{0706E27D-3D2C-4B25-95BC-B621D85F03D7} = {8433F76D-B397-459A-8B48-DB2A25B75755}
 		{F6840E63-05E4-4DFA-86F6-689ABBC56EA4} = {355B5B02-B196-4D04-942C-BB164B3AB109}
 		{368AED2C-7331-4768-BF8E-0691647663C5} = {355B5B02-B196-4D04-942C-BB164B3AB109}
+		{E1A662F1-509B-4869-892F-CFF0ED9D4E86} = {E773335A-6B88-4781-B661-72916733CE02}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E93A9C7-878C-4003-BA36-CDDDC041F646}
