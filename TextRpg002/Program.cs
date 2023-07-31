@@ -30,15 +30,63 @@ class FightUnit
     public void StatusRender()
     {
         Console.Write(Name);
-        Console.WriteLine("의 능력치 ------------------------------------");
+        Console.WriteLine("의 능력치");
+        Console.WriteLine("------------------------------------");
         Console.Write("공격력 : ");
         Console.WriteLine(AT);
-        Console.WriteLine("------------------------------------");
         Console.Write("체력 : ");
         Console.Write(HP);
         Console.Write("/");
         Console.WriteLine(MAXHP);
-        Console.WriteLine("------------------------------------");
+        Console.WriteLine("------------------------------------\n\n");
+    }
+
+    // 1. 죽을 때 까지 싸우게 만들어라
+    // 1-1. 권장, 플레이어 한대, 몬스터 한대
+    // 2. 한 쪽이 죽으면(나간다) 마을로 자동 이송
+    // 2-1. 그냥 나간다.
+    // 2-2. 마을로 나간다.
+
+    // 한 번에 모든 걸 끝낼려고 하는 것 보다
+    // 쪼개서, 분리해서 구현
+
+    // 상속은 객체지향에서 매우 필수적인 개념이다.
+    // 꼭 외워라. 계속 응용해보아라.
+
+    // 가장 기본적인 것이 되면 그 다음부터 하라.
+    // 가장 단순한 부분부터 만들어가라.
+    // 수단과 방법을 가리지 않고 (구현)
+    // 싸우게 만들어보기.
+
+    public void Battle(FightUnit otherUnit)
+    {
+        Console.Clear();
+        
+        otherUnit.HP -= this.AT;
+        Console.Write(this.Name);
+        Console.WriteLine("의 공격!");
+        Console.Write(this.AT);
+        Console.WriteLine("의 대미지를 입혔다!");
+        Console.WriteLine();
+        otherUnit.StatusRender();
+        Console.ReadKey();
+
+        this.HP -= otherUnit.AT;
+        Console.Write(otherUnit.Name);
+        Console.WriteLine("의 공격!");
+        Console.Write(otherUnit.AT);
+        Console.WriteLine("의 대미지를 입혔다!");
+        Console.WriteLine();
+        this.StatusRender();
+        Console.ReadKey();
+    }
+
+    public void BattleUntilDead(FightUnit otherUnit)
+    {
+        while(this.HP > 0 && otherUnit.HP > 0)
+        {
+            Battle(otherUnit);
+        }
     }
 }
 
@@ -83,15 +131,19 @@ class Player : FightUnit
     public Player()
     {
         Name = "플레이어";
+        AT = 10;
+        HP = 100;
     }
 }
 
 class Monster : FightUnit
 {
     // 인자값을 만들어 줄 수도 있다.
-    public Monster(string _Name)
+    public Monster()
     {
-        Name = _Name;
+        Name = "오크";
+        AT = 5;
+        HP = 50;
     }
 }
 
@@ -198,31 +250,12 @@ namespace TextRpg002
             // 객체로 만들어 나가는 것.
 
             Player NewPlayer = new Player();
-            Monster NewMonster = new Monster("오크");
+            Monster NewMonster = new Monster();
 
             // ** 둘 중 누군가 죽을 때 까지 싸우는 기능 구현 숙제
-            while(/*둘 중 누군가 죽을 때 까지*/true)
-            {
-                NewPlayer.StatusRender();
-                NewMonster.StatusRender();
-                // 1. 죽을 때 까지 싸우게 만들어라
-                // 1-1. 권장, 플레이어 한대, 몬스터 한대
-                // 2. 한 쪽이 죽으면(나간다) 마을로 자동 이송
-                // 2-1. 그냥 나간다.
-                // 2-2. 마을로 나간다.
+            NewPlayer.BattleUntilDead(NewMonster);
 
-                // 한 번에 모든 걸 끝낼려고 하는 것 보다
-                // 쪼개서, 분리해서 구현
-
-                // 상속은 객체지향에서 매우 필수적인 개념이다.
-                // 꼭 외워라. 계속 응용해보아라.
-
-                // 가장 기본적인 것이 되면 그 다음부터 하라.
-                // 가장 단순한 부분부터 만들어가라.
-                // 수단과 방법을 가리지 않고 (구현)
-                // 싸우게 만들어보기.
-                Console.ReadKey();
-            }
+            Console.ReadKey();
 
             //while (true)
             //{
