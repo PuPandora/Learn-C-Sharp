@@ -62,6 +62,8 @@ class FightUnit
     {
         Console.Clear();
         
+        if (this.HP > 0)
+        {
         otherUnit.HP -= this.AT;
         Console.Write(this.Name);
         Console.WriteLine("의 공격!");
@@ -70,15 +72,19 @@ class FightUnit
         Console.WriteLine();
         otherUnit.StatusRender();
         Console.ReadKey();
+        }
 
-        this.HP -= otherUnit.AT;
-        Console.Write(otherUnit.Name);
-        Console.WriteLine("의 공격!");
-        Console.Write(otherUnit.AT);
-        Console.WriteLine("의 대미지를 입혔다!");
-        Console.WriteLine();
-        this.StatusRender();
-        Console.ReadKey();
+        if (otherUnit.HP > 0)
+        {
+            this.HP -= otherUnit.AT;
+            Console.Write(otherUnit.Name);
+            Console.WriteLine("의 공격!");
+            Console.Write(otherUnit.AT);
+            Console.WriteLine("의 대미지를 입혔다!");
+            Console.WriteLine();
+            this.StatusRender();
+            Console.ReadKey();
+        }
     }
 
     public void BattleUntilDead(FightUnit otherUnit)
@@ -133,6 +139,7 @@ class Player : FightUnit
         Name = "플레이어";
         AT = 10;
         HP = 100;
+        MAXHP = 100;
     }
 }
 
@@ -144,6 +151,12 @@ class Monster : FightUnit
         Name = "오크";
         AT = 5;
         HP = 50;
+        MAXHP = 50;
+    }
+
+    public void Regen()
+    {
+        HP = MAXHP;
     }
 }
 
@@ -183,6 +196,7 @@ namespace TextRpg002
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.D1:
+                        Console.Clear();
                         // Player 클래스의 체력을 어떻게든 채우는 코드
                         //_Player.Heal(100);
                         _Player.MaxHeal();
@@ -190,19 +204,13 @@ namespace TextRpg002
                         Console.ReadKey();
                         break;
                     case ConsoleKey.D2:
-
-                    case ConsoleKey.D3:
                         break;
+                    case ConsoleKey.D3:
+                        return;
                     default:
                         break;
                 }
             }
-        }
-
-        static void Battle()
-        {
-            Console.WriteLine("아직 개장하지 않았습니다.");
-            Console.ReadKey();
         }
 
         static STARTSELECT StartSelect()
@@ -232,14 +240,11 @@ namespace TextRpg002
             switch (CKI.Key)
             {
                 case ConsoleKey.D1:
-                    Console.ReadKey();
                     return STARTSELECT.SELECTOWN;
                 case ConsoleKey.D2:
-                    Console.ReadKey();
                     return STARTSELECT.SELECTBATTLE;
                 default:
                     return STARTSELECT.NONSELECT;
-
             }
         }
 
@@ -252,26 +257,23 @@ namespace TextRpg002
             Player NewPlayer = new Player();
             Monster NewMonster = new Monster();
 
-            // ** 둘 중 누군가 죽을 때 까지 싸우는 기능 구현 숙제
-            NewPlayer.BattleUntilDead(NewMonster);
+            while (true)
+            {
+                STARTSELECT SelectCheck = StartSelect();
 
-            Console.ReadKey();
+                switch (SelectCheck)
+                {
+                    case STARTSELECT.SELECTOWN:
+                        Town(NewPlayer);
+                        break;
+                    case STARTSELECT.SELECTBATTLE:
+                        // ** 둘 중 누군가 죽을 때 까지 싸우는 기능 구현 숙제
+                        NewPlayer.BattleUntilDead(NewMonster);
+                        break;
+                }
 
-            //while (true)
-            //{
-            //    STARTSELECT SelectCheck = StartSelect();
-
-            //    switch (SelectCheck)
-            //    {
-            //        case STARTSELECT.SELECTOWN:
-            //            Town(NewPlayer);
-            //            break;
-            //        case STARTSELECT.SELECTBATTLE:
-            //            Battle();
-            //            break;
-            //    }
-
-            //}
+                NewMonster.Regen();
+            }
         }
     }
 }
