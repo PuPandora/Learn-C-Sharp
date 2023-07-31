@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CFD1297C-5801-4BEE-A802-5C4E056E3CFF}</ProjectGuid>
+    <ProjectGuid>{0051C6EC-22B2-4F17-80EA-16B993D7D154}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Test02_1Variable</RootNamespace>
-    <AssemblyName>02_1Variable</AssemblyName>
+    <RootNamespace>_03Arrary</RootNamespace>
+    <AssemblyName>_03Arrary</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Variable.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

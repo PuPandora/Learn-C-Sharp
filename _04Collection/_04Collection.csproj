@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{69F02AF4-6A07-4ADD-A52F-781ED647072A}</ProjectGuid>
+    <ProjectGuid>{2591FBD2-EDD7-4F90-A927-1BBFE6F4E1D7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_05Enum</RootNamespace>
-    <AssemblyName>05Enum</AssemblyName>
+    <RootNamespace>_04Collection</RootNamespace>
+    <AssemblyName>_04Collection</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

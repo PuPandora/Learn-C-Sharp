@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3A560603-12AE-4DF9-BE70-C231C952E8A1}</ProjectGuid>
+    <ProjectGuid>{9CEB095B-6A24-486E-B8D1-0399C0E0C930}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_06ChallengeQuiz</RootNamespace>
-    <AssemblyName>06ChallengeQuiz</AssemblyName>
+    <RootNamespace>_07Operator</RootNamespace>
+    <AssemblyName>_07Operator</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
