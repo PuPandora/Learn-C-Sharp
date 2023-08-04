@@ -8,6 +8,14 @@ using System.Threading.Tasks;
 // 클래스와 비슷한 구조이지만
 // 멤버가 추상 메소드, 추상 속성, 추상 인덱서, 이벤트로 한정됨.
 
+interface SampleInterface
+{
+    void SampleMethod()
+    {
+
+    }
+}
+
 namespace _10Interface
 {
     internal class Program
