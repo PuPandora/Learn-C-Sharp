@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// [C# 강의 26화]클래스별 파일 분리 [어소트락 게임아카데미 게임학원]
+// https://www.youtube.com/watch?v=dRKDSRQjmkg&pp=ygUn7Ja07IaM7Yq46529IEMjIO2BtOuemOyKpCDtjIzsnbwg67aE66as
+
 // Ctrl + K + F / 자동 코드 정렬
 // 네임스페이스 없어도 된다.
 class Program
