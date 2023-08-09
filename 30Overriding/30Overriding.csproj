@@ -7,7 +7,7 @@
     <ProjectGuid>{6E41EC42-B891-431D-87B3-37FC056892E2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_30Overriding</RootNamespace>
-    <AssemblyName>_30Overriding</AssemblyName>
+    <AssemblyName>30Overriding</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Overriding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
