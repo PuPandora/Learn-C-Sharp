@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Player.cs" />
     <Compile Include="Partial.cs" />
+    <Compile Include="Player.Quest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
