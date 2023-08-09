@@ -84,7 +84,7 @@ class NPC : FightUnit, QuestUnit
     }
 }
 
-internal class Program
+internal class Interface
 {
     static void Main(string[] args)
     {
