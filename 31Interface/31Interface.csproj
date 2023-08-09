@@ -7,7 +7,7 @@
     <ProjectGuid>{DE65A297-6908-479C-9D3A-FB26361DEDDC}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_31Interface</RootNamespace>
-    <AssemblyName>_31Interface</AssemblyName>
+    <AssemblyName>31Interface</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

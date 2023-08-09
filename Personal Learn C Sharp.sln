@@ -95,6 +95,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "29OverLoading", "29OverLoad
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "30Overriding", "30Overriding\30Overriding.csproj", "{6E41EC42-B891-431D-87B3-37FC056892E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "31Interface", "31Interface\31Interface.csproj", "{DE65A297-6908-479C-9D3A-FB26361DEDDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -257,6 +259,10 @@ Global
 		{6E41EC42-B891-431D-87B3-37FC056892E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E41EC42-B891-431D-87B3-37FC056892E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E41EC42-B891-431D-87B3-37FC056892E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE65A297-6908-479C-9D3A-FB26361DEDDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE65A297-6908-479C-9D3A-FB26361DEDDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE65A297-6908-479C-9D3A-FB26361DEDDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE65A297-6908-479C-9D3A-FB26361DEDDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -304,6 +310,7 @@ Global
 		{96429A0D-04CD-47D3-AFD8-A06EBC21E5CC} = {355B5B02-B196-4D04-942C-BB164B3AB109}
 		{28AA33CE-D596-420F-B2E9-CEA4A2B6372C} = {355B5B02-B196-4D04-942C-BB164B3AB109}
 		{6E41EC42-B891-431D-87B3-37FC056892E2} = {355B5B02-B196-4D04-942C-BB164B3AB109}
+		{DE65A297-6908-479C-9D3A-FB26361DEDDC} = {355B5B02-B196-4D04-942C-BB164B3AB109}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E93A9C7-878C-4003-BA36-CDDDC041F646}
