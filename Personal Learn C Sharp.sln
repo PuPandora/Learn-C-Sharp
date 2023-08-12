@@ -103,6 +103,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "32Array", "32Array\32Array.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventorySystem", "InventorySystem\InventorySystem.csproj", "{696D386A-8F62-4E36-A31C-A87F5A3EE450}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "33Null", "33Null\33Null.csproj", "{408B06D0-FED4-42F5-A338-BB844F36853B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -281,6 +283,10 @@ Global
 		{696D386A-8F62-4E36-A31C-A87F5A3EE450}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{696D386A-8F62-4E36-A31C-A87F5A3EE450}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{696D386A-8F62-4E36-A31C-A87F5A3EE450}.Release|Any CPU.Build.0 = Release|Any CPU
+		{408B06D0-FED4-42F5-A338-BB844F36853B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{408B06D0-FED4-42F5-A338-BB844F36853B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{408B06D0-FED4-42F5-A338-BB844F36853B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{408B06D0-FED4-42F5-A338-BB844F36853B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -332,6 +338,7 @@ Global
 		{82F32236-0411-4F88-B50A-B6C7AF99F9D5} = {F61EC47F-034E-4D04-8BC6-BED9DEB8AF03}
 		{469965F7-5C3B-4D96-B743-7A265C08A8CD} = {355B5B02-B196-4D04-942C-BB164B3AB109}
 		{696D386A-8F62-4E36-A31C-A87F5A3EE450} = {8433F76D-B397-459A-8B48-DB2A25B75755}
+		{408B06D0-FED4-42F5-A338-BB844F36853B} = {355B5B02-B196-4D04-942C-BB164B3AB109}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E93A9C7-878C-4003-BA36-CDDDC041F646}
