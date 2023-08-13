@@ -17,6 +17,10 @@ class Inven
     Item[] ArrItem;
     int ItemX;
 
+    // 숙제 - Select 만들기
+    // 선택한 곳의 아이템 만들기 (선택 전환 가능)
+    int SelectIndex = 0;
+
     // 잘못쓰기 힘들게 하는 것이 좋다.
     // 생성자를 이용하여 특정하게 제한하는 방식
     // 인벤토리를 new 하려면, int X와 Y를 넣어줘야 한다.
@@ -47,6 +51,37 @@ class Inven
         ArrItem = new Item[(_X * _Y)];
     }
 
+    // 객체의 교류
+    // 인벤은 아이템이 필요하다.
+    public void ItemIn(Item _Item)
+    {
+        int Index = 0;
+        // 인덱스만 몇번이 될지 잘 정하면 된다.
+
+        for (int i = 0; i < ArrItem.Length; i++)
+        {
+            if (ArrItem[i] == null)
+            {
+                Index = i;
+                break;
+            }
+        }
+        ArrItem[Index] = _Item;
+    }
+
+    public void ItemIn(Item _Item, int _Order)
+    {
+        // System.IndexOutOfRangeException 방어코드 만들기
+
+        // 방어코드
+        if (ArrItem[_Order] != null)
+        {
+            return;
+        }
+
+        ArrItem[_Order] = _Item;
+    }
+
     public void Render()
     {
         for (int i = 0; i < ArrItem.Length; i++)
@@ -56,13 +91,22 @@ class Inven
             // 10 11 12 13 14
 
             // i % 5
+            // 0도 5와 나눌 경우 0이 되기에 0이 아니라는 조건 추가
+            // 조건이야 늘려주면 되긴 한다.
+            // 프로그램을 구현할 때는 구현에 신경을 쓰자.
+            // 프로그램의 최적화, 효율은 나중에 생각해도 되는 문제이다. (너무 신경 안 쓰진 말고...)
             if (0 != i && 0 == i % ItemX)
             {
                 Console.WriteLine();
             }
 
+            if (SelectIndex == i)
+            {
+                Console.Write("▣");
+            }
+
             // 인벤토리 n번째 칸에 아이템이 없다면
-            if (ArrItem[i] == null)
+            else if (ArrItem[i] == null)
             {
                 Console.Write("□");
             }
@@ -71,6 +115,12 @@ class Inven
             {
                 Console.Write("■");
             }
+
+            Console.WriteLine("");
+
+            Console.WriteLine("현재 선택한 아이템");
+            Console.WriteLine("이름 : " + ArrItem[SelectIndex].Name);
+            Console.WriteLine("가격 : " + ArrItem[SelectIndex].Gold);
         }
     }
 }

@@ -9,6 +9,8 @@ class Item
     string mName;
     int mGold;
 
+    // 시작부터 쓸거라고 예상하고 만드는건
+    // 좋지 않은 습관.. (프로그래밍이 익숙한게 아니라면)
     public string Name
     {
         get
@@ -31,5 +33,10 @@ class Item
         {
             mGold = value;
         }
+    }
+
+    public Item(string _Name, int _Gold)
+    {
+        Name = _Name;
     }
 }
