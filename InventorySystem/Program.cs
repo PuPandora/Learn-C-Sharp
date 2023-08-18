@@ -34,14 +34,39 @@ class Program
         NewInven.ItemIn(new Item("철검", 100));
         NewInven.ItemIn(new Item("갑옷", 100));
 
-        // 알아서 처리해 줄거라는 생각 자체를 하지 말라.
-        NewInven.ItemIn(new Item("포션", 100), 6);
+        // 알아서 컴퓨터, 언어가 자동으로 오류나 예외를 처리해 줄거라는 생각 자체를 하지 말라.
+        NewInven.ItemIn(new Item("포션", 50), 6);
+
+        NewInven.ItemIn(new Item("레나의 장미꽃", 1), 8);
+        NewInven.ItemIn(new Item("월광관 고교 완장", 1), 12);
+        NewInven.ItemIn(new Item("야소가미 고교 교복", 1), 13);
+        NewInven.ItemIn(new Item("슈진 고교 체육복", 1), 14);
+        NewInven.ItemIn(new Item("아르카나 카드", 1), 15);
+        NewInven.ItemIn(new Item("르블랑 수제 커피", 70), 16);
+        NewInven.ItemIn(new Item("언터쳐블 모델건 MK.II", 350), 24);
 
         while (true)
         {
             Console.Clear();
-            NewInven.Render();
-            Console.ReadKey();
+            NewInven.RenderInventory();
+            ConsoleKey PlayerInput = PlayerInputKey();
+
+            // 화살표 왼쪽, 오른쪽 입력 받았다면
+            if (PlayerInput == ConsoleKey.LeftArrow)
+            {
+                NewInven.MoveSelectLeft();
+            }
+            else if (PlayerInput == ConsoleKey.RightArrow)
+            {
+                NewInven.MoveSelectRight();
+            }
         }
+    }
+
+    static private ConsoleKey PlayerInputKey()
+    {
+        ConsoleKeyInfo CKI;
+        CKI = Console.ReadKey();
+        return CKI.Key;
     }
 }

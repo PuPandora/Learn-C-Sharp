@@ -19,7 +19,7 @@ class Inven
 
     // 숙제 - Select 만들기
     // 선택한 곳의 아이템 만들기 (선택 전환 가능)
-    int SelectIndex = 0;
+    private int SelectIndex = 0;
 
     // 잘못쓰기 힘들게 하는 것이 좋다.
     // 생성자를 이용하여 특정하게 제한하는 방식
@@ -53,6 +53,9 @@ class Inven
 
     // 객체의 교류
     // 인벤은 아이템이 필요하다.
+
+    // 아이템 넣기
+    // 아이템 처음부터 순차적으로 탐색해 빈 공간에 아이템 넣기
     public void ItemIn(Item _Item)
     {
         int Index = 0;
@@ -60,29 +63,82 @@ class Inven
 
         for (int i = 0; i < ArrItem.Length; i++)
         {
+            // 비어있는 칸을 찾아 아이템 넣기
             if (ArrItem[i] == null)
             {
                 Index = i;
                 break;
             }
+            // 비어있는 칸이 없다면
+            else
+            {
+                Console.WriteLine("인벤토리에 비어있는 공간이 없습니다.");
+            }
         }
         ArrItem[Index] = _Item;
     }
 
+    // 특정 위치에 아이템 넣기
     public void ItemIn(Item _Item, int _Order)
     {
         // System.IndexOutOfRangeException 방어코드 만들기
 
+        _Order--;
         // 방어코드
-        if (ArrItem[_Order] != null)
+        // 인벤토리 범위 안을 지정하고
+        if (0 <= _Order && _Order < ArrItem.Length)
         {
-            return;
+            // 해당 칸에 아이템이 없다면
+            if (ArrItem[_Order] == null)
+            {
+                // 아이템 넣기
+                ArrItem[_Order] = _Item;
+            }
         }
 
-        ArrItem[_Order] = _Item;
+        // 기타 예외의 경우 순차적으로 빈 공간을 찾아 넣기
+        else
+        {
+            ItemIn(_Item);
+        }
+
+
     }
 
-    public void Render()
+    // 왼쪽 이동
+    public void MoveSelectLeft()
+    {
+        // 왼쪽에 공간이 더 있다면
+        if (SelectIndex > 0)
+        {
+            SelectIndex--;
+        }
+        // 왼쪽에 공간이 더 없다면
+        else
+        {
+            Console.WriteLine("");
+            Console.WriteLine("현재 인벤토리의 왼쪽은 더 없습니다..");
+            Console.ReadKey();
+        }
+    }
+    // 오른쪽 이동
+    public void MoveSelectRight()
+    {
+        // 오른쪽에 공간이 더 있다면
+        if (SelectIndex+1 < ArrItem.Length)
+        {
+            SelectIndex++;
+        }
+        // 오른쪽에 공간이 더 없다면
+        else
+        {
+            Console.WriteLine("현재 인벤토리 오른쪽은 더 없습니다..");
+            Console.ReadKey();
+        }
+    }
+
+    // 아이템 출력
+    public void RenderInventory()
     {
         for (int i = 0; i < ArrItem.Length; i++)
         {
@@ -115,12 +171,26 @@ class Inven
             {
                 Console.Write("■");
             }
+        }
+        RenderItemInfo();
+    }
 
-            Console.WriteLine("");
-
+    private void RenderItemInfo()
+    {
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine(SelectIndex+1 + "번째 칸");
+        Console.WriteLine("");
+        Console.WriteLine("====================");
+        if (ArrItem[SelectIndex] != null)
+        {
             Console.WriteLine("현재 선택한 아이템");
             Console.WriteLine("이름 : " + ArrItem[SelectIndex].Name);
             Console.WriteLine("가격 : " + ArrItem[SelectIndex].Gold);
+        }
+        else
+        {
+            Console.WriteLine("비어있는 칸");
         }
     }
 }

@@ -38,5 +38,6 @@ class Item
     public Item(string _Name, int _Gold)
     {
         Name = _Name;
+        Gold = _Gold;
     }
 }
