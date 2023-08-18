@@ -98,6 +98,15 @@ class FightUnit
 
 class Player : FightUnit
 {
+    private Inven PlayerInven = new Inven(5, 3);
+    public Inven PInven
+    {
+        get
+        {
+            return PlayerInven;
+        }
+    }
+
     public void Heal(int value)
     {
         HP += value;
@@ -172,8 +181,31 @@ namespace TextRpg002
             NONSELECT,
         }
 
-        static void Town(Player _Player)
+        static void Shop(Player _Player, Inven _ShopInven)
         {
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("=======================================================");
+                Console.WriteLine("상점의 인벤토리");
+                _ShopInven.RenderInventory();
+                Console.WriteLine("");
+                Console.WriteLine("=======================================================");
+                Console.WriteLine("플레이어의 인벤토리");
+                _Player.PInven.RenderInventory();
+                Console.ReadKey();
+            }
+        }
+
+        static STARTSELECT Town(Player _Player)
+        {
+            Inven ShopInven = new Inven(5, 3);
+            ShopInven.ItemIn(new Item("철검", 500));
+            ShopInven.ItemIn(new Item("갑옷", 500));
+            ShopInven.ItemIn(new Item("장화", 300));
+            ShopInven.ItemIn(new Item("빵", 100));
+            ShopInven.ItemIn(new Item("수프", 50));
+
             while (true)
             {
                 Console.Clear();
@@ -181,7 +213,7 @@ namespace TextRpg002
                 Console.WriteLine("마을에서 무슨일을 하시겠습니까?");
                 Console.ReadKey();
                 Console.WriteLine("1. 체력을 회복한다.");
-                Console.WriteLine("2. 무기를 강화한다.");
+                Console.WriteLine("2. 상점에 들립니다.");
                 Console.WriteLine("3. 마을을 나간다.");
 
                 // 초반에 프로그래밍의 전부
@@ -204,9 +236,10 @@ namespace TextRpg002
                         Console.ReadKey();
                         break;
                     case ConsoleKey.D2:
+                        Shop(_Player, ShopInven);
                         break;
                     case ConsoleKey.D3:
-                        return;
+                        break;
                     default:
                         break;
                 }
