@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 // [C# 강의 33화]인벤토리 만들기 2부+ break continue 설명 설명 [어소트락 게임아카데미 게임학원]
 // https://youtu.be/mECMKruSzdI?list=PL4SIC1d_ab-Y-bBKojxhtFWwNpawMM1h5
 
+// [C# 강의 34화]인벤토리 인터페이스 제작 [어소트락 게임아카데미 게임학원]
+// https://www.youtube.com/watch?v=CmcE_oqA8WI&list=PL4SIC1d_ab-Y-bBKojxhtFWwNpawMM1h5&index=34&t=1233s&pp=iAQB
+
 class Program
 {
     static void Main(string[] args)
@@ -51,14 +54,21 @@ class Program
             NewInven.RenderInventory();
             ConsoleKey PlayerInput = PlayerInputKey();
 
-            // 화살표 왼쪽, 오른쪽 입력 받았다면
-            if (PlayerInput == ConsoleKey.LeftArrow)
+            // 화살표 입력을 받아 인벤토리 칸 이동
+            switch(PlayerInput)
             {
-                NewInven.MoveSelectLeft();
-            }
-            else if (PlayerInput == ConsoleKey.RightArrow)
-            {
-                NewInven.MoveSelectRight();
+                case ConsoleKey.LeftArrow:
+                    NewInven.MoveSelectLeft();
+                    break;
+                case ConsoleKey.RightArrow:
+                    NewInven.MoveSelectRight();
+                    break;
+                case ConsoleKey.UpArrow:
+                    NewInven.MoveSelectUp();
+                    break;
+                case ConsoleKey.DownArrow:
+                    NewInven.MoveSelectDown();
+                    break;
             }
         }
     }

@@ -101,7 +101,12 @@ class Inven
         {
             ItemIn(_Item);
         }
+    }
 
+    // 인자 값으로 어느 방향으로 움직일지
+    // 구현 예정
+    public void MoveSelect()
+    {
 
     }
 
@@ -109,15 +114,18 @@ class Inven
     public void MoveSelectLeft()
     {
         // 왼쪽에 공간이 더 있다면
-        if (SelectIndex > 0)
+        int CheckIndex = SelectIndex - 1;
+        if (OverCheck(CheckIndex))
         {
             SelectIndex--;
         }
-        // 왼쪽에 공간이 더 없다면
+
+
+        // 공간이 더 없다면
         else
         {
             Console.WriteLine("");
-            Console.WriteLine("현재 인벤토리의 왼쪽은 더 없습니다..");
+            Console.WriteLine("현재 인벤토리의 왼쪽은 더 없습니다.");
             Console.ReadKey();
         }
     }
@@ -125,16 +133,65 @@ class Inven
     public void MoveSelectRight()
     {
         // 오른쪽에 공간이 더 있다면
-        if (SelectIndex+1 < ArrItem.Length)
+        int CheckIndex = SelectIndex + 1;
+        if (OverCheck(CheckIndex))
         {
             SelectIndex++;
         }
-        // 오른쪽에 공간이 더 없다면
+
+        // 공간이 더 없다면
         else
         {
-            Console.WriteLine("현재 인벤토리 오른쪽은 더 없습니다..");
+            Console.WriteLine("");
+            Console.WriteLine("현재 인벤토리 오른쪽은 더 없습니다.");
             Console.ReadKey();
         }
+    }
+    // 위로 이동
+    public void MoveSelectUp()
+    {
+        int CheckIndex = SelectIndex;
+        CheckIndex -= ItemX;
+
+        if (OverCheck(CheckIndex))
+        {
+            SelectIndex -= ItemX;
+        }
+
+        // 공간이 더 없다면
+        else
+        {
+            Console.WriteLine("");
+            Console.WriteLine("현재 인벤토리의 위쪽은 더 없습니다.");
+            Console.ReadKey();
+        }
+    }
+    // 아래로 이동
+    public void MoveSelectDown()
+    {
+        int CheckIndex = SelectIndex;
+        CheckIndex += ItemX;
+
+        if (OverCheck(CheckIndex))
+        {
+            SelectIndex += ItemX;
+        }
+
+        // 공간이 더 없다면
+        else
+        {
+            Console.WriteLine("");
+            Console.WriteLine("현재 인벤토리의 아래쪽은 더 없습니다.");
+            Console.ReadKey();
+        }
+    }
+
+    public bool OverCheck(int _SelectIndex)
+    {
+        if (0 <= _SelectIndex && _SelectIndex < ArrItem.Length)
+            return true;
+
+        return false;
     }
 
     // 아이템 출력
@@ -178,18 +235,20 @@ class Inven
     private void RenderItemInfo()
     {
         Console.WriteLine("");
-        Console.WriteLine("");
-        Console.WriteLine(SelectIndex+1 + "번째 칸");
-        Console.WriteLine("");
-        Console.WriteLine("====================");
         if (ArrItem[SelectIndex] != null)
         {
+            Console.WriteLine(SelectIndex + 1 + "번째 칸");
+            Console.WriteLine("");
+            Console.WriteLine("====================");
             Console.WriteLine("현재 선택한 아이템");
             Console.WriteLine("이름 : " + ArrItem[SelectIndex].Name);
             Console.WriteLine("가격 : " + ArrItem[SelectIndex].Gold);
         }
         else
         {
+            Console.WriteLine(SelectIndex + 1 + "번째 칸");
+            Console.WriteLine("");
+            Console.WriteLine("====================");
             Console.WriteLine("비어있는 칸");
         }
     }
