@@ -58,16 +58,16 @@ class Program
             switch(PlayerInput)
             {
                 case ConsoleKey.LeftArrow:
-                    NewInven.MoveSelectLeft();
+                    NewInven.MoveSelect2(Inven.MOVESELECT.MOVE_LEFT);
                     break;
                 case ConsoleKey.RightArrow:
-                    NewInven.MoveSelectRight();
+                    NewInven.MoveSelect2(Inven.MOVESELECT.MOVE_RIGHT);
                     break;
                 case ConsoleKey.UpArrow:
-                    NewInven.MoveSelectUp();
+                    NewInven.MoveSelect2(Inven.MOVESELECT.MOVE_UP);
                     break;
                 case ConsoleKey.DownArrow:
-                    NewInven.MoveSelectDown();
+                    NewInven.MoveSelect2(Inven.MOVESELECT.MOVE_DOWN);
                     break;
             }
         }

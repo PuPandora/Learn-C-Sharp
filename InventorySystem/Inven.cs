@@ -21,6 +21,14 @@ class Inven
     // 선택한 곳의 아이템 만들기 (선택 전환 가능)
     private int SelectIndex = 0;
 
+    public enum MOVESELECT
+    {
+        MOVE_LEFT,
+        MOVE_RIGHT,
+        MOVE_UP,
+        MOVE_DOWN,
+    }
+
     // 잘못쓰기 힘들게 하는 것이 좋다.
     // 생성자를 이용하여 특정하게 제한하는 방식
     // 인벤토리를 new 하려면, int X와 Y를 넣어줘야 한다.
@@ -103,15 +111,53 @@ class Inven
         }
     }
 
-    // 인자 값으로 어느 방향으로 움직일지
-    // 구현 예정
-    public void MoveSelect()
+    // 인자 값으로 어느 방향으로 움직일지 정하는 하나의 함수
+    // 기존 함수 활용
+    public void MoveSelect(MOVESELECT _moveSelect)
     {
+        switch (_moveSelect)
+        {
+            case (MOVESELECT.MOVE_LEFT):
+                MoveSelectLeft();
+                break;
+            case MOVESELECT.MOVE_RIGHT:
+                MoveSelectRight();
+                break;
+            case MOVESELECT.MOVE_UP:
+                MoveSelectUp();
+                break;
+            case MOVESELECT.MOVE_DOWN:
+                MoveSelectDown();
+                break;
+        }
+    }
 
+    // 함수를 사용하지 않을 경우
+    public void MoveSelect2(MOVESELECT _moveSelect)
+    {
+        switch (_moveSelect)
+        {
+            case (MOVESELECT.MOVE_LEFT):
+                if (OverCheck(SelectIndex - 1))
+                    SelectIndex--;
+                break;
+            case (MOVESELECT.MOVE_RIGHT):
+                if (OverCheck(SelectIndex + 1))
+                    SelectIndex++;
+                break;
+            case (MOVESELECT.MOVE_UP):
+                if (OverCheck(SelectIndex - ItemX))
+                    SelectIndex -= ItemX;
+                break;
+            case (MOVESELECT.MOVE_DOWN):
+                if (OverCheck(SelectIndex + ItemX))
+                    SelectIndex += ItemX;
+                break;
+        }
     }
 
     // 왼쪽 이동
-    public void MoveSelectLeft()
+    private void MoveSelectLeft()
     {
         // 왼쪽에 공간이 더 있다면
         int CheckIndex = SelectIndex - 1;
@@ -130,7 +176,7 @@ class Inven
         }
     }
     // 오른쪽 이동
-    public void MoveSelectRight()
+    private void MoveSelectRight()
     {
         // 오른쪽에 공간이 더 있다면
         int CheckIndex = SelectIndex + 1;
@@ -148,7 +194,7 @@ class Inven
         }
     }
     // 위로 이동
-    public void MoveSelectUp()
+    private void MoveSelectUp()
     {
         int CheckIndex = SelectIndex;
         CheckIndex -= ItemX;
@@ -167,7 +213,7 @@ class Inven
         }
     }
     // 아래로 이동
-    public void MoveSelectDown()
+    private void MoveSelectDown()
     {
         int CheckIndex = SelectIndex;
         CheckIndex += ItemX;
