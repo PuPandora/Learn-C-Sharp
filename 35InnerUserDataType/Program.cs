@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 // [C# 강의 35화]이너 클래스 이너 enum [어소트락 게임아카데미 게임학원]
 // https://www.youtube.com/watch?v=MBg_D2FWH-c&list=PL4SIC1d_ab-Y-bBKojxhtFWwNpawMM1h5&index=35&t=221s&pp=iAQB
 
-
-
 class Player
 {
     // 그 클래스가 자기만 사용할 때 가장 많이 사용한다.
@@ -59,6 +57,8 @@ class Inven
 
         public void Select(Inven _inven)
         {
+            // 자신을 가지고 있는 클래스의 멤버변수를
+            // 마치 public처럼 사용할 수 있다.
 
             // 상위 클래스의 private 변수 접근 불가능
             // SelectIndex = 100;
