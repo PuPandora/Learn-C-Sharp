@@ -18,6 +18,9 @@ internal class Program
 {
     static void Main(string[] args)
     {
+        // Player NewPlayer 변수는 할 수 있는 일이
+        // 어떤 녀석을 가르키는 일 밖에 하지 못한다.
+
         Player NewPlayer = new Player();
         NewPlayer.AT = 50;
         Console.WriteLine(NewPlayer.AT);
