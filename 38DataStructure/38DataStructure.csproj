@@ -7,7 +7,7 @@
     <ProjectGuid>{347836ED-60BA-45B6-8ACF-A447FC3166D7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_38DataStructure</RootNamespace>
-    <AssemblyName>_38DataStructure</AssemblyName>
+    <AssemblyName>38DataStructure</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
