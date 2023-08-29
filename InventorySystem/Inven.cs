@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,12 @@ class Inven
     // 숙제 - Select 만들기
     // 선택한 곳의 아이템 만들기 (선택 전환 가능)
     private int SelectIndex = 0;
+
+    // 아이템 교체 기능을 위한 전역 변수 선언
+    private bool SwapMode = false;
+    Item firstSelectItem = new Item("UNKNOWN", 0);
+    int firstSelectIndex = 0;
+    int secondSelectIndex = 0;
 
     public enum MOVESELECT
     {
@@ -296,6 +303,58 @@ class Inven
             Console.WriteLine("");
             Console.WriteLine("====================");
             Console.WriteLine("비어있는 칸");
+        }
+        if (SwapMode)
+        {
+            Console.WriteLine();
+            Console.WriteLine("아이템 위치를 바꾸거나 이동할 인벤토리 칸을 선택해주세요.");
+            if (ArrItem[firstSelectIndex] != null)
+                Console.WriteLine("위치를 바꾸기 위해 선택한 아이템 : " + ArrItem[firstSelectIndex].Name);
+            else
+                Console.WriteLine("위치를 바꾸기 위해 빈칸 선택됨.");
+        }
+    }
+
+    public void ItemSwap()
+    {
+        // 첫번째 스페이스바 입력
+        if (!SwapMode)
+        {
+            // 첫번째 선택 아이템
+            firstSelectItem = ArrItem[SelectIndex];
+            firstSelectIndex = SelectIndex;
+            SwapMode = true;
+        }
+
+        // 두 번째 스페이스바 입력
+        else if (SwapMode)
+        {
+            // 빈칸이라면
+            if (ArrItem[SelectIndex] == null)
+            {
+                // 빈칸으로 선택한 아이템 이동
+                ArrItem[SelectIndex] = ArrItem[firstSelectIndex];
+                // 기존 칸 아이템 데이터 제거
+                ArrItem[firstSelectIndex] = null;
+            }
+            // 아이템이라면
+            else
+            {
+                // 교환용 임시 객체
+                Item temp;
+                temp = ArrItem[firstSelectIndex];
+                // 두번째 선택 저장
+                secondSelectIndex = SelectIndex;
+                // 아이템 위치 변경
+                ArrItem[firstSelectIndex] = ArrItem[secondSelectIndex];
+                ArrItem[secondSelectIndex] = temp;
+            }
+
+            // 변수 초기화
+            firstSelectIndex = 0;
+            secondSelectIndex = 0;
+            SwapMode = false;
+            firstSelectItem = new Item("UNKNOWN", 0);
         }
     }
 }

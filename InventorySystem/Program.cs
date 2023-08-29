@@ -54,20 +54,30 @@ class Program
             NewInven.RenderInventory();
             ConsoleKey PlayerInput = PlayerInputKey();
 
-            // 화살표 입력을 받아 인벤토리 칸 이동
             switch(PlayerInput)
             {
+                // 상하좌우를 입력받아 인벤토리 칸 이동
                 case ConsoleKey.LeftArrow:
+                case ConsoleKey.A:
                     NewInven.MoveSelect2(Inven.MOVESELECT.MOVE_LEFT);
                     break;
                 case ConsoleKey.RightArrow:
+                case ConsoleKey.D:
                     NewInven.MoveSelect2(Inven.MOVESELECT.MOVE_RIGHT);
                     break;
                 case ConsoleKey.UpArrow:
+                case ConsoleKey.W:
                     NewInven.MoveSelect2(Inven.MOVESELECT.MOVE_UP);
                     break;
                 case ConsoleKey.DownArrow:
+                case ConsoleKey.S:
                     NewInven.MoveSelect2(Inven.MOVESELECT.MOVE_DOWN);
+                    break;
+
+                // 스페이스, 엔터키를 입력을 받아 아이템 이동
+                case ConsoleKey.Spacebar:
+                case ConsoleKey.Enter:
+                    NewInven.ItemSwap();
                     break;
             }
         }
