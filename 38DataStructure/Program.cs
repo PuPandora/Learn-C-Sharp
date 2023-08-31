@@ -31,7 +31,7 @@ class MyDataStructure<T>
 
     }
         
-    public void Extend(T _Size)
+    public void Extend(int _Size)
     {
 
     }
@@ -46,6 +46,11 @@ internal class Program
 
         // 자료구조에는 보통 컨테이너라는 용어를 사용한다.
         // 시퀀스 컨테이너, 연관 컨테이너, 어뎁터 컨테이너라고 분류.
+
+        // 시퀀스 컨테이너와 List (C#) vector(C# 에서는없다.) / SortedList
+        // ㄴ 자료를 추가하거나 제거한 뒤 순서가 바뀌지 않는 형태 - 시퀀스
+        // 연관 컨테이너 Dictionary (C# 해쉬맵), map(C++)
+        // 어뎁터 컨테이너 Stack, Queue
 
         // 데이터의 메모리 구조는
         // 배열과 노드형이 대부분이다.
