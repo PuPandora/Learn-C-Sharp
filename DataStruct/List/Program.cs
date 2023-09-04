@@ -79,10 +79,9 @@ namespace List
             NewList.RemoveRange(0, 4); // 0번째 부터 4개 지운다.
 
             for (int i =0; i < NewList.Count; i++)
-            {
                 Console.Write(NewList[i]);
-            }
 
+            // 배열과 달리 List는 원하는 것, 원하는 위치를 골라서 제거하거나 추가할 수 있다.
 
             // List 형을 Array로 바꿔주는 함수
             int[] Arr = NewList.ToArray();
