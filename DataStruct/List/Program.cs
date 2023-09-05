@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// [C# 강의 39화]자료구조 개념잡기 2차 [어소트락 게임아카데미 게임학원]
+// https://www.youtube.com/watch?v=dafhlGShcdg&list=PL4SIC1d_ab-Y-bBKojxhtFWwNpawMM1h5&index=39&pp=iAQB
+
 namespace List
 {
-
     // 간단하게 만들며 리스트 구조 파악해보기
     class MyList<T>
     {
@@ -27,6 +29,8 @@ namespace List
     {
         static void Main(string[] args)
         {
+            // 자료구조란 어떠한 자료형이라도 받을 수 있어야 하기에
+            // 보통은 제네릭 클래스여야 한다
             MyList<int> NewInt = new MyList<int>();
             NewInt.Add(10);
 
