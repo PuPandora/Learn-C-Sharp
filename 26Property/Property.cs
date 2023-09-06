@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -121,6 +122,9 @@ namespace _26Property
             NewPlayer.hp -= newMonster.AttackDamage;
             NewPlayer.HpPercent = (float)NewPlayer.hp * 0.01f;
             NewPlayer.hp = (int)NewPlayer.HpPercent;
+
+            float totalResult = (50.5f + 56.2f + 85.6f) / 3;
+            int average = (int)totalResult;
         }
     }
 }
