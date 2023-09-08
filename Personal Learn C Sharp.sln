@@ -123,6 +123,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Node", "Node\Node.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "LinkedList\LinkedList.csproj", "{430DDB14-AC2B-43D9-9CA4-99FF569DA49C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeEx", "NodeEx\NodeEx.csproj", "{21A69E24-840A-49D6-BF28-8C14FEFC0122}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -337,6 +339,10 @@ Global
 		{430DDB14-AC2B-43D9-9CA4-99FF569DA49C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{430DDB14-AC2B-43D9-9CA4-99FF569DA49C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{430DDB14-AC2B-43D9-9CA4-99FF569DA49C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21A69E24-840A-49D6-BF28-8C14FEFC0122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21A69E24-840A-49D6-BF28-8C14FEFC0122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21A69E24-840A-49D6-BF28-8C14FEFC0122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21A69E24-840A-49D6-BF28-8C14FEFC0122}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -398,6 +404,7 @@ Global
 		{12995FD8-B34B-4403-98FE-BECE9EA9299D} = {29475385-7DF6-4C0C-BA9C-1CFC2D13F673}
 		{4D30C448-A310-492E-8376-D229D6D86E5F} = {29475385-7DF6-4C0C-BA9C-1CFC2D13F673}
 		{430DDB14-AC2B-43D9-9CA4-99FF569DA49C} = {29475385-7DF6-4C0C-BA9C-1CFC2D13F673}
+		{21A69E24-840A-49D6-BF28-8C14FEFC0122} = {29475385-7DF6-4C0C-BA9C-1CFC2D13F673}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E93A9C7-878C-4003-BA36-CDDDC041F646}
