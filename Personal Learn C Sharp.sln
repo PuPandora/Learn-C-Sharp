@@ -133,6 +133,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00Object", "Book\This is Cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01Nullable", "01NullAble\01Nullable.csproj", "{2734DA4C-8C21-4EAD-AF4D-1B46D81AD63A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tetris", "Youtube\Game\Tetris\Tetris.csproj", "{1A5BAD75-6AF0-4D1B-890D-AF67BA19965A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -363,6 +365,10 @@ Global
 		{2734DA4C-8C21-4EAD-AF4D-1B46D81AD63A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2734DA4C-8C21-4EAD-AF4D-1B46D81AD63A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2734DA4C-8C21-4EAD-AF4D-1B46D81AD63A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A5BAD75-6AF0-4D1B-890D-AF67BA19965A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A5BAD75-6AF0-4D1B-890D-AF67BA19965A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A5BAD75-6AF0-4D1B-890D-AF67BA19965A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A5BAD75-6AF0-4D1B-890D-AF67BA19965A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -429,6 +435,7 @@ Global
 		{C4A54DC6-C4D6-42D5-84BE-B875C28F24DF} = {F67EA632-C806-4501-A5D8-CED7E59DDF9D}
 		{D787D932-8DD9-41C8-935C-232D09F1CD0D} = {C4A54DC6-C4D6-42D5-84BE-B875C28F24DF}
 		{2734DA4C-8C21-4EAD-AF4D-1B46D81AD63A} = {C4A54DC6-C4D6-42D5-84BE-B875C28F24DF}
+		{1A5BAD75-6AF0-4D1B-890D-AF67BA19965A} = {8433F76D-B397-459A-8B48-DB2A25B75755}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E93A9C7-878C-4003-BA36-CDDDC041F646}
