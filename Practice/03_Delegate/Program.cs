@@ -2,63 +2,115 @@
 
 namespace _03_Delegate
 {
-    public delegate void MyDelegate(string message);
-    public delegate void NoReturnDelegate();
-    public delegate string HasReturnDelegate();
-    public delegate void NoParameterDelegate();
-    public delegate void HasParameterDelegate(string message);
-
-    internal class Program
+    class Unit
     {
-        public static void MyMethod(string message)
+        public string name { get; protected set; } = "UNKNOWN";
+        public int hp { get; protected set; } = 0;
+        public int maxHp { get; protected set; } = 0;
+        public int damage { get; protected set; } = 0;
+        public bool isDead { get; protected set; } = false;
+
+        public delegate void AAction();
+        public delegate void AAAction(Unit unit);
+        public event AAAction OnDeath = delegate { };
+        public event AAction OnAttack = delegate { };
+
+        protected Unit(string name, int hp, int damage)
         {
-            Console.WriteLine(message);
+            this.name = name;
+            this.maxHp = hp;
+            this.hp = maxHp;
+            this.damage = damage;
+
+            Console.WriteLine($"{name}이/가 생성되었습니다.");
         }
 
-        public static void NoReturnMethod()
+        public virtual void Attack(Unit unit)
         {
-            Console.WriteLine("- NoReturnMethod");
-            Console.WriteLine("반환이 없는 대리자\n");
+            if (isDead)
+            {
+                return;
+            }
+
+            unit.OnHit(this);
+
+            // 공격을 알리는 이벤트
+            OnAttack();
         }
 
-        public static string HasReturnMethod()
+        public virtual void OnHit(Unit unit)
         {
-            Console.WriteLine("- HasReturnMethod");
-            return "반환이 있는 대리자\n";
+            hp -= unit.damage;
+
+            if (hp < 0)
+            {
+                hp = 0;
+                isDead = true;
+            }
+
+            PrintHP();
+
+            if (isDead)
+            {
+                // 죽음을 알리는 이벤트
+                OnDeath(this);
+            }
+
         }
 
-        public static void HasParameterMethod(string message)
+        public void Fight(Unit unit)
         {
-            Console.WriteLine("- HasParameterMethod");
-            Console.WriteLine(message);
+            Console.WriteLine($"{name}이/가 {unit.name}와/과 전투를 시작합니다");
+
+            while (!unit.isDead && !this.isDead)
+            {
+                Attack(unit);
+                unit.Attack(this);
+            }
         }
 
-        public static void NoParameterMethod()
+        public void PrintHP()
         {
-            Console.WriteLine("- NoParameterMethod");
-            Console.WriteLine("매개변수가 없는 대리자\n");
+            Console.WriteLine($"{name}의 HP : {hp} / {maxHp}");
+        }
+    }
+
+    class Player : Unit
+    {
+        public Player(string name, int hp, int damage) : base(name, hp, damage)
+        {
+
+        }
+    }
+
+    class Monster : Unit
+    {
+        public Monster(string name, int hp, int damage) : base(name, hp, damage)
+        {
+
+        }
+    }
+
+    class Program
+    {
+        static Monster myMonster;
+        static Player myPlayer;
+
+        static void OnUnitDeath(Unit unit)
+        {
+            Console.WriteLine($"유닛 {unit.name}이/가 사망했습니다.");
+            myPlayer.OnDeath -= OnUnitDeath;
         }
 
         static void Main(string[] args)
         {
-            //MyDelegate myDeledage = new MyDelegate(MyMethod);
-            //myDeledage("Hello, World");
+            myMonster = new Monster("Orc", 50, 5);
+            myPlayer = new Player("Hoyo", 100, 10);
 
-            // 반환 없음
-            NoReturnDelegate noReturn = new NoReturnDelegate(NoReturnMethod);
-            noReturn();
+            myPlayer.OnDeath += OnUnitDeath;
+            myMonster.OnDeath += OnUnitDeath;
 
-            // 반환 있음
-            HasReturnDelegate hasReturn = new HasReturnDelegate(HasReturnMethod);
-            Console.WriteLine(hasReturn());
-
-            // 매개변수 없음
-            NoParameterDelegate noParam = new NoParameterDelegate(NoParameterMethod);
-            noParam();
-
-            // 매개변수 있음
-            HasParameterDelegate hasParam = new HasParameterDelegate(HasParameterMethod);
-            hasParam("매개변수가 있는 대리자\n");
+            myPlayer.Fight(myMonster);
         }
     }
 }
