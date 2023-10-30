@@ -93,24 +93,52 @@ namespace _03_Delegate
 
     class Program
     {
-        static Monster myMonster;
-        static Player myPlayer;
 
         static void OnUnitDeath(Unit unit)
         {
             Console.WriteLine($"유닛 {unit.name}이/가 사망했습니다.");
-            myPlayer.OnDeath -= OnUnitDeath;
+            unit.OnDeath -= OnUnitDeath;
         }
 
-        static void Main(string[] args)
+        static void PlayerMonster()
         {
-            myMonster = new Monster("Orc", 50, 5);
-            myPlayer = new Player("Hoyo", 100, 10);
+            Monster myMonster = new Monster("Orc", 50, 5);
+            Player myPlayer = new Player("Hoyo", 100, 10);
 
             myPlayer.OnDeath += OnUnitDeath;
             myMonster.OnDeath += OnUnitDeath;
 
             myPlayer.Fight(myMonster);
+        }
+
+        static void YoutubeSubscribeSystem()
+        {
+            Youtuber Lala = new Youtuber("라라");
+            Youtuber Nana = new Youtuber("나나");
+            Subscriber subscriberA = new Subscriber("렌");
+
+            subscriberA.Subscribe(Lala);
+            subscriberA.Subscribe(Nana);
+
+            Lala.UploadVideo("나의 첫 게임 플레이 영상");
+            Nana.UploadVideo("C# 프로그래밍 강좌 | 34");
+
+            subscriberA.Subscribe(Lala);
+            subscriberA.DeSubscribe(Lala);
+            subscriberA.DeSubscribe(Nana);
+
+            Lala.UploadVideo("비공개 동영상");
+            Lala.RemoveVideo(Lala.YoutubeVideos[1]);
+
+            subscriberA.WatchVideo(Lala.YoutubeVideos[0]);
+            subscriberA.Subscribe(Lala);
+        }
+
+        static void Main(string[] args)
+        {
+            //PlayerMonster();
+
+            YoutubeSubscribeSystem();
         }
     }
 }
