@@ -1,12 +1,12 @@
-﻿using SortingAlgorithm;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SortingAlgorithm;
 
-static class Array
+public static class Array
 {
     private static Random random = new Random();
 
@@ -62,7 +62,8 @@ static class Array
     }
 }
 
-internal class _Program
+
+internal class Program
 {
     static int[] intRandArr;
     static int[] intSortedArr;
@@ -126,19 +127,19 @@ internal class _Program
                 case ConsoleKey.D1:
                     Console.Clear();
                     Array.PrintArray(intRandArr);
-                    Sort.SelectionSort(intRandArr);
+                    SortingAlgorithm.Sort.SelectionSort(intRandArr);
                     break;
 
                 case ConsoleKey.D2:
                     Console.Clear();
                     Array.PrintArray(intRandArr);
-                    Sort.BubbleSort(intRandArr);
+                    SortingAlgorithm.Sort.BubbleSort(intRandArr);
                     break;
 
                 case ConsoleKey.D3:
                     Console.Clear();
                     Array.PrintArray(intRandArr);
-                    Sort.InsertionSort(intRandArr);
+                    SortingAlgorithm.Sort.InsertionSort(intRandArr);
                     break;
 
                 case ConsoleKey.D4:
