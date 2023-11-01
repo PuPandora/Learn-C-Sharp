@@ -6,6 +6,19 @@ using System.Threading.Tasks;
 
 public class InsertionSort : SortingAlgorithm, ISortingAlgorithm
 {
+    public static InsertionSort Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new InsertionSort();
+            }
+            return instance;
+        }
+    }
+    private static InsertionSort instance;
+
     public void Sort(int[] array)
     {
         // 1. 배열의 길이만큼 반복한다
@@ -14,10 +27,11 @@ public class InsertionSort : SortingAlgorithm, ISortingAlgorithm
         // 3-1. i-1 요소와 j-1 요소를 비교하고, i가 작다면 교환한다.
         // 4. 만약 i가 작지 않다면, 다음 요소 검사로 넘어간다.
 
-        Console.WriteLine("\n===== 삽입 정렬 =====\n");
+        algorithmName = "삽입 정렬";
+        comparisonCount = 0;
+        swapCount = 0;
 
-        int comparisonCount = 0;
-        int swapCount = 0;
+        PrintAlgorithmName();
 
         for (int i = 1; i < array.Length; i++)
         {
@@ -43,6 +57,6 @@ public class InsertionSort : SortingAlgorithm, ISortingAlgorithm
             }
         }
 
-        PrintOperationCount(comparisonCount, swapCount);
+        PrintOperationCount();
     }
 }

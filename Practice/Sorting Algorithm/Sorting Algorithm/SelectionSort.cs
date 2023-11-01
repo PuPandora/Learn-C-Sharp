@@ -6,6 +6,19 @@ using System.Threading.Tasks;
 
 public class SelectionSort : SortingAlgorithm, ISortingAlgorithm
 {
+    public static SelectionSort Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new SelectionSort();
+            }
+            return instance;
+        }
+    }
+    private static SelectionSort instance;
+
     public void Sort(int[] array)
     {
         // 1. 배열의 n번째 요소를 minNumberIndex에 저장한다.
@@ -15,10 +28,11 @@ public class SelectionSort : SortingAlgorithm, ISortingAlgorithm
         // 3. 전부 순회한 뒤, 배열[n] 요소와 배열[minNumberIndex] 요소를 서로 교환한다.
         // 4. n+1 하고 2~4 과정을 배열의 길이만큼 반복한다.
 
-        Console.WriteLine("\n===== 선택 정렬 =====\n");
-
+        algorithmName = "선택 정렬";
         comparisonCount = 0;
         swapCount = 0;
+
+        PrintAlgorithmName();
 
         for (int i = 0; i < array.Length; i++)
         {
@@ -46,6 +60,6 @@ public class SelectionSort : SortingAlgorithm, ISortingAlgorithm
             swapCount++;
         }
 
-        PrintOperationCount(comparisonCount, swapCount);
+        PrintOperationCount();
     }
 }

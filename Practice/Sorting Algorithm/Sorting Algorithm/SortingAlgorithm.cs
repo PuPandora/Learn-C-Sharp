@@ -12,19 +12,6 @@ public interface ISortingAlgorithm
 
 public class SortingAlgorithm
 {
-    public static SortingAlgorithm Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = new SortingAlgorithm();
-            }
-            return instance;
-        }
-    }
-    private static SortingAlgorithm instance;
-
     protected string algorithmName;
     protected int comparisonCount = 0;
     protected int swapCount = 0;
@@ -34,7 +21,7 @@ public class SortingAlgorithm
         Console.WriteLine($"===== {algorithmName} =====");
     }
 
-    protected void PrintOperationCount(int comparisonCount, int swapCount)
+    public void PrintOperationCount()
     {
         Console.WriteLine($"비교 횟수 : {comparisonCount}\n교환 횟수 : {swapCount}\n");
         Console.WriteLine("===== ===== ===== =====\n");

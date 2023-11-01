@@ -4,8 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-internal class BubbleSort : SortingAlgorithm, ISortingAlgorithm
+public class BubbleSort : SortingAlgorithm, ISortingAlgorithm
 {
+    public static BubbleSort Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new BubbleSort();
+            }
+            return instance;
+        }
+    }
+    private static BubbleSort instance;
+
     public void Sort(int[] array)
     {
         // 1. (배열의 길이-1) * (배열의 길이-1) 만큼 비교한다.
@@ -14,6 +27,7 @@ internal class BubbleSort : SortingAlgorithm, ISortingAlgorithm
         // 3. 첫 반복이 끝났다면 가장 큰 숫자가 가장 뒤에 위치 됨
         // 4. 반복 횟수가 늘어나면, 가장 뒤에 정렬되는 요소 개수가 동일하게 증가한다
 
+        algorithmName = "버블 정렬";
         comparisonCount = 0;
         swapCount = 0;
 
@@ -34,6 +48,6 @@ internal class BubbleSort : SortingAlgorithm, ISortingAlgorithm
             }
         }
 
-        PrintOperationCount(comparisonCount, swapCount);
+        PrintOperationCount();
     }
 }
