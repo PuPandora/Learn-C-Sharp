@@ -153,6 +153,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringChar", "StringChar\St
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_Polymorphism", "05_Polymorphism\05_Polymorphism.csproj", "{EFC0F6B2-00C1-4CC6-8E42-E051AC4B1E13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_object", "06_object\06_object.csproj", "{E7CC2CC1-AC31-4F79-B8AA-6F43578BDD78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -415,6 +417,10 @@ Global
 		{EFC0F6B2-00C1-4CC6-8E42-E051AC4B1E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFC0F6B2-00C1-4CC6-8E42-E051AC4B1E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFC0F6B2-00C1-4CC6-8E42-E051AC4B1E13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7CC2CC1-AC31-4F79-B8AA-6F43578BDD78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7CC2CC1-AC31-4F79-B8AA-6F43578BDD78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7CC2CC1-AC31-4F79-B8AA-6F43578BDD78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7CC2CC1-AC31-4F79-B8AA-6F43578BDD78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -491,6 +497,7 @@ Global
 		{54BEFB96-2D1F-4CBE-8777-42FE28813431} = {45F0C37E-F3F9-4CA5-B1A6-6BE1E44FA10B}
 		{A18E8656-5E1A-4C88-AAF6-486CD1A96478} = {F61EC47F-034E-4D04-8BC6-BED9DEB8AF03}
 		{EFC0F6B2-00C1-4CC6-8E42-E051AC4B1E13} = {E773335A-6B88-4781-B661-72916733CE02}
+		{E7CC2CC1-AC31-4F79-B8AA-6F43578BDD78} = {E773335A-6B88-4781-B661-72916733CE02}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E93A9C7-878C-4003-BA36-CDDDC041F646}
