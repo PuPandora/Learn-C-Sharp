@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class SelectionSort : SortingAlgorithm, ISortingAlgorithm
+public sealed class SelectionSort : SortingAlgorithm
 {
     public static SelectionSort Instance
     {
@@ -19,7 +19,7 @@ public class SelectionSort : SortingAlgorithm, ISortingAlgorithm
     }
     private static SelectionSort instance;
 
-    public void Sort(int[] array)
+    public override void Sort(int[] array)
     {
         // 1. 배열의 n번째 요소를 minNumberIndex에 저장한다.
         // 2. 배열의 n+1 인덱스 요소부터 비교를 시작하며,
@@ -60,6 +60,12 @@ public class SelectionSort : SortingAlgorithm, ISortingAlgorithm
             swapCount++;
         }
 
+        PrintSortResult(array);
+    }
+
+    public override void PrintSortResult(int[] array)
+    {
+        MakeArray.PrintArray(array);
         PrintOperationCount();
     }
 }

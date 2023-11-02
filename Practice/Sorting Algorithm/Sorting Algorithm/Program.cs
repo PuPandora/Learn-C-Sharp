@@ -54,7 +54,6 @@ internal class Program
         bool isRun = true;
         bool isExit = false;
         bool isDefault = false;
-        SortingAlgorithm curAlgorithm = null;
 
         while (isRun)
         {
@@ -71,21 +70,18 @@ internal class Program
                     Console.Clear();
                     MakeArray.PrintArray(intRandArr);
                     SelectionSort.Instance.Sort(intRandArr);
-                    curAlgorithm = SelectionSort.Instance;
                     break;
 
                 case ConsoleKey.D2:
                     Console.Clear();
                     MakeArray.PrintArray(intRandArr);
                     BubbleSort.Instance.Sort(intRandArr);
-                    curAlgorithm = BubbleSort.Instance;
                     break;
 
                 case ConsoleKey.D3:
                     Console.Clear();
                     MakeArray.PrintArray(intRandArr);
                     InsertionSort.Instance.Sort(intRandArr);
-                    curAlgorithm = InsertionSort.Instance;
                     break;
 
                 case ConsoleKey.D4:
@@ -98,11 +94,6 @@ internal class Program
                     Console.Clear();
                     isDefault = true;
                     break;
-            }
-            if (!isExit && !isDefault)
-            {
-                MakeArray.PrintArray(intRandArr);
-                curAlgorithm.PrintOperationCount();
             }
         }
     }

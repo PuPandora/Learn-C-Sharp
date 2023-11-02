@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class InsertionSort : SortingAlgorithm, ISortingAlgorithm
+public sealed class InsertionSort : SortingAlgorithm
 {
     public static InsertionSort Instance
     {
@@ -19,7 +19,7 @@ public class InsertionSort : SortingAlgorithm, ISortingAlgorithm
     }
     private static InsertionSort instance;
 
-    public void Sort(int[] array)
+    public override void Sort(int[] array)
     {
         // 1. 배열의 길이만큼 반복한다
         // 2. 현재 인덱스 요소(i)와 현재 진행 중인 인덱스-1 요소(j)를 비교한다.
@@ -57,6 +57,12 @@ public class InsertionSort : SortingAlgorithm, ISortingAlgorithm
             }
         }
 
+        PrintSortResult(array);
+    }
+
+    public override void PrintSortResult(int[] array)
+    {
+        MakeArray.PrintArray(array);
         PrintOperationCount();
     }
 }

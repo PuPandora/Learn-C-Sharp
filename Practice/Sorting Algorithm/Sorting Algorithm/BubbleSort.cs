@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class BubbleSort : SortingAlgorithm, ISortingAlgorithm
+public sealed class BubbleSort : SortingAlgorithm
 {
     public static BubbleSort Instance
     {
@@ -19,7 +19,7 @@ public class BubbleSort : SortingAlgorithm, ISortingAlgorithm
     }
     private static BubbleSort instance;
 
-    public void Sort(int[] array)
+    public override void Sort(int[] array)
     {
         // 1. (배열의 길이-1) * (배열의 길이-1) 만큼 비교한다.
         // 2. n번째 요소를 n+1번째 요소와 비교
@@ -48,6 +48,12 @@ public class BubbleSort : SortingAlgorithm, ISortingAlgorithm
             }
         }
 
+        PrintSortResult(array);
+    }
+
+    public override void PrintSortResult(int[] array)
+    {
+        MakeArray.PrintArray(array);
         PrintOperationCount();
     }
 }
