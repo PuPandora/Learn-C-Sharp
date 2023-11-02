@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 // 확장 메소드
+// C# 3.0
 namespace _09_ExpandMethod
 {
     class Animal

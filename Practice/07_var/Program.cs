@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 // var 키워드
+// C# 3.0
 namespace _07_var
 {
     internal class Program

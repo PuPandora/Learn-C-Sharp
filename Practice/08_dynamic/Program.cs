@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 // dynamic 키워드
+// C# 4.0
 namespace _08_dynamic
 {
     internal class Program
