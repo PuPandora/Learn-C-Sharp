@@ -74,10 +74,17 @@ namespace _01BuilderPattern
             return this;
         }
 
-        public void DisplayStudentInfo()
+        public void Reset()
         {
-            Console.WriteLine("=== 학생 정보 ===");
-            Console.WriteLine($"번호 : {student.number}\n이름 : {student.name}\n키 : {student.height}\n몸무게 : {student.weight}\n");
+            student.number = default;
+            student.name = default;
+            student.height = default;
+            student.weight = default;
+        }
+
+        public Student Build()
+        {
+            return student;
         }
     }
 
@@ -85,20 +92,41 @@ namespace _01BuilderPattern
     {
         static void Main(string[] args)
         {
-            // Use Constructor
+            const int studentCount = 3;
+            Student[] students = new Student[studentCount];
+
+            // 생성자 사용
             Student one = new Student(1, "나일번", 173.4f, 67.2f);
-            one.DisplayStudentInfo();
+            students[0] = one;
 
-            // Use Builder-Pattern
-            StudentBuilder two = new StudentBuilder();
-            two.SetNumber(2).SetName("나이번").SetHieght(179.2f).SetWeight(81.4f);
-            two.DisplayStudentInfo();
+            // 빌더 패턴 사용
+            StudentBuilder studentBuilder = new StudentBuilder();
 
-            StudentBuilder three = new StudentBuilder();
-            three.SetNumber(3).SetName("나삼번").SetHieght(158.6f).SetWeight(54.7f);
-            three.DisplayStudentInfo();
+            studentBuilder
+                .SetNumber(2)
+                .SetName("나이번")
+                .SetHieght(179.2f)
+                .SetWeight(81.4f);
+            students[1] = studentBuilder.Build();
+
+            studentBuilder.Reset();
+
+            studentBuilder
+                .SetNumber(3)
+                .SetName("나삼번")
+                .SetHieght(158.6f)
+                .SetWeight(54.7f);
+            students[2] = studentBuilder.Build();
+
+
+            // 학생 정보 출력
+            foreach (Student student in students)
+            {
+                student.DisplayStudentInfo();
+            }
 
             // 빌더 패턴을 사용하면 코드 가독성이 향상된다.
+            // 클래스의 확장성이 좋아지며, 확장 되었을 때 기존 코드에서 에러가 발생하지 않는다.
             // 하지만 클래스 혹은 코드 규모가 커지면 코드 길이가 길어진다.
         }
     }
