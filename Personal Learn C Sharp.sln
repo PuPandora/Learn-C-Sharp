@@ -177,6 +177,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverrideTest", "Note\Overri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionVariable", "FunctionVariable\FunctionVariable.csproj", "{56DAD78C-9E12-4627-99E2-780375E52FB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharArray", "Note\CharArray\CharArray.csproj", "{D9773BB6-B8FC-4175-9DB2-CBF6BF0BBF83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -487,6 +489,10 @@ Global
 		{56DAD78C-9E12-4627-99E2-780375E52FB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56DAD78C-9E12-4627-99E2-780375E52FB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56DAD78C-9E12-4627-99E2-780375E52FB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9773BB6-B8FC-4175-9DB2-CBF6BF0BBF83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9773BB6-B8FC-4175-9DB2-CBF6BF0BBF83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9773BB6-B8FC-4175-9DB2-CBF6BF0BBF83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9773BB6-B8FC-4175-9DB2-CBF6BF0BBF83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -575,6 +581,7 @@ Global
 		{2E99E345-E804-4222-A9C0-FDDA9C86D23A} = {81C249EE-76AC-493B-BAFD-191DE6DD2402}
 		{1111EC43-829C-4621-83A6-EC434A3546F6} = {F61EC47F-034E-4D04-8BC6-BED9DEB8AF03}
 		{56DAD78C-9E12-4627-99E2-780375E52FB9} = {F61EC47F-034E-4D04-8BC6-BED9DEB8AF03}
+		{D9773BB6-B8FC-4175-9DB2-CBF6BF0BBF83} = {F61EC47F-034E-4D04-8BC6-BED9DEB8AF03}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E93A9C7-878C-4003-BA36-CDDDC041F646}
